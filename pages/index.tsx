@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { useState } from "react";
+import Modal from "../components/common/Modal";
 import Bookmark from "../components/screen/home/Bookmark";
 import Greeting from "../components/screen/home/Greeting";
 import Rank from "../components/screen/home/Rank";
@@ -23,6 +25,9 @@ const bookmarks = [
 ];
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
+  const [modalChildren, setModalChildren] = useState(<></>);
+
   return (
     <TabScreen>
       <Head>
@@ -33,12 +38,14 @@ const Home = () => {
       </Head>
 
       <Greeting name="이다윗" />
-      <SafemodeInfo />
+      <SafemodeInfo setState={setOpen} setChildren={setModalChildren} />
       <div className="grid grid-cols-2 gap-x-2">
         <Rank title="일반웹툰 순위" items={rankItems} />
         <Rank title="성인웹툰 순위" items={rankItems} />
       </div>
       <Bookmark title="내 북마크" items={bookmarks} />
+
+      <Modal state={[open, setOpen]} children={modalChildren} />
     </TabScreen>
   );
 };

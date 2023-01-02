@@ -19,11 +19,11 @@ const Nav: React.FC<{
         return (
           <Link href={route} className="h-14 flex flex-col items-center justify-center w-full" key={i}>
             <div className="h-5 mt-1">
-              <Icon size={22} color={focused ? "#3b82f6" : "#6b7280"} />
+              <Icon size={22} color={focused ? "#10b981" : "#6b7280"} />
             </div>
             <span
               className={`text-[11px] font-sans mt-0.5 ${
-                focused ? "text-blue-500 font-bold" : "text-gray-500 font-semibold"
+                focused ? "text-emerald-500 font-bold" : "text-gray-500 font-semibold"
               }`}
             >
               {label}
