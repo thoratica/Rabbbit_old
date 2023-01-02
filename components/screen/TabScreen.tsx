@@ -1,5 +1,5 @@
 import Nav from "./Nav";
-import { ExploreIcon, HomeIcon, MyIcon } from "./icons";
+import { ExploreIcon, HomeIcon, MyIcon } from "../icons";
 
 const routes: { icon: React.FC<{ size: number; color: string }>; label: string; route: string }[] = [
   { icon: HomeIcon, label: "홈", route: "/" },

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Nav: React.FC<{
@@ -16,7 +17,7 @@ const Nav: React.FC<{
         const focused = router.asPath === route;
 
         return (
-          <a href={route} className="h-14 flex flex-col items-center justify-center w-full" key={i}>
+          <Link href={route} className="h-14 flex flex-col items-center justify-center w-full" key={i}>
             <div className="h-5 mt-1">
               <Icon size={22} color={focused ? "#3b82f6" : "#6b7280"} />
             </div>
@@ -27,7 +28,7 @@ const Nav: React.FC<{
             >
               {label}
             </span>
-          </a>
+          </Link>
         );
       })}
     </nav>
