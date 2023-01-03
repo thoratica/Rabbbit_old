@@ -7,7 +7,7 @@ const SafemodeInfo: React.FC<{
 }> = ({ setState: setOpen, setChildren }) => {
   return (
     <div
-      className="flex items-center bg-emerald-50 hover:bg-emerald-100 focus:bg-emerald-100 transition-colors duration-300 mx-4 mt-3 p-2 rounded-xl"
+      className="flex items-center bg-emerald-50 mx-4 mt-3 p-2 rounded-xl"
       onClick={() => {
         setChildren(<SafemodeModalContent />);
         setOpen(true);

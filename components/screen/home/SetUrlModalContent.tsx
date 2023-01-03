@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Switch from "../../common/Switch";
 
-const SafemodeModalContent = () => {
+const SetUrlModalContent = () => {
   const [on, setOn] = useState(true);
 
   return (
     <div className="py-0.5 flex flex-col w-full">
-      <h3 className="text-black text-[19px] font-bold mx-5">안전 모드</h3>
+      <h3 className="text-black text-[19px] font-bold mx-5">URL 설정</h3>
       <div
         className={`flex items-center ${
           on ? "bg-emerald-50" : "bg-gray-100"
@@ -31,4 +31,4 @@ const SafemodeModalContent = () => {
   );
 };
 
-export default SafemodeModalContent;
+export default SetUrlModalContent;

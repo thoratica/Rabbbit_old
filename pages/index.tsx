@@ -5,6 +5,7 @@ import Bookmark from "../components/screen/home/Bookmark";
 import Greeting from "../components/screen/home/Greeting";
 import Rank from "../components/screen/home/Rank";
 import SafemodeInfo from "../components/screen/home/SafemodeInfo";
+import SetUrlInfo from "../components/screen/home/SetUrlInfo";
 import TabScreen from "../components/screen/TabScreen";
 
 const rankItems = [
@@ -39,6 +40,7 @@ const Home = () => {
 
       <Greeting name="이다윗" />
       <SafemodeInfo setState={setOpen} setChildren={setModalChildren} />
+      <SetUrlInfo setState={setOpen} setChildren={setModalChildren} />
       <div className="grid grid-cols-2 gap-x-2">
         <Rank title="일반웹툰 순위" items={rankItems} />
         <Rank title="성인웹툰 순위" items={rankItems} />
