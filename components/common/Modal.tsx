@@ -1,19 +1,24 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 const Modal: React.FC<
   React.PropsWithChildren & { state: [boolean, React.Dispatch<React.SetStateAction<boolean>>] }
 > = ({ children, state: [open, setOpen] }) => {
+  const openRef = useRef(false);
+
   const closeModal = useCallback(
     (backButtonPressed: boolean = false) => {
+      if (!openRef.current) return;
       if (!backButtonPressed) window.history.back();
+      openRef.current = false;
       setOpen(false);
     },
-    [open]
+    [open, openRef]
   );
 
   useEffect(() => {
     if (open) {
+      openRef.current = true;
       window.history.pushState(null, "");
       window.addEventListener("popstate", () => closeModal(true), { once: true });
     }
