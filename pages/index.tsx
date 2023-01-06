@@ -18,14 +18,21 @@ const rankItems = [
 
 const bookmarks = [
   {
-    thumb:
-      "https://newtoki13.org/data/file/webtoon/634d818739759_1qm24cS8_340415c1dd11199a33b9bf0417b6add0200fc7ab.PNG",
-    title: "동아리",
     id: "1",
+    title: "재벌집 예순일곱째아들",
+    thumb: "https://tica.fun/api/thumbnail?title=재벌집%20예순일곱째아들",
+    updated: 1672511315,
+  },
+  {
+    id: "2",
+    title: "우사모 유료 회원 송준호",
+    thumb: "https://tica.fun/api/thumbnail?title=우사모%20유료%20회원%20송준호",
+    updated: 1546280915,
   },
 ];
 
 const Home = () => {
+  const [safemodeOn, setSafemodeOn] = useState(true);
   const [open, setOpen] = useState(false);
   const [modalChildren, setModalChildren] = useState(<></>);
 
@@ -38,8 +45,8 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Greeting name="이다윗" />
-      <SafemodeInfo setState={setOpen} setChildren={setModalChildren} />
+      <Greeting name="이다윗" onState={[safemodeOn, setSafemodeOn]} setState={setOpen} setChildren={setModalChildren} />
+      {/* <SafemodeInfo setState={setOpen} setChildren={setModalChildren} /> */}
       <SetUrlInfo setState={setOpen} setChildren={setModalChildren} />
       <div className="grid grid-cols-2 gap-x-2">
         <Rank title="일반웹툰 순위" items={rankItems} />

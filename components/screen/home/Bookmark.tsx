@@ -12,10 +12,17 @@ const Bookmark: React.FC<{ title: string; items: { thumb: string; title: string;
               <a key={item.id}>
                 <img
                   src={item.thumb}
-                  className="h-[84px] object-cover object-top rounded-md"
+                  className="h-28 object-cover object-top rounded-xl"
                   style={{ aspectRatio: "16 / 9" }}
                 />
-                {item.title}
+                <div className="px-1 mt-1">
+                  <div className="font-semibold">{item.title}</div>
+                  <div className="flex">
+                    <span className="text-sm text-gray-600 font-medium leading-4">
+                      2일 전 <span className="text-gray-400">·</span> 금요일
+                    </span>
+                  </div>
+                </div>
               </a>
             );
           })}
